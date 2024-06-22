@@ -1,0 +1,13 @@
+@import "./vars.css";
+
+.App {
+  background-color: var(--color-bg);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.content {
+  margin-top: 100px; /* Ajoutez une marge au-dessus du contenu pour séparer visuellement du navbar */
+  padding: 20px; /* Ajoutez un peu d'espace intérieur pour le contenu */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre pour distinguer le contenu */
+}

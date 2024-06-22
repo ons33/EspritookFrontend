@@ -1,0 +1,25 @@
+/* src/pages/Cours/mesCours.css */
+
+.participant-list {
+    margin-top: 20px;
+}
+
+.participant-list h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.participant-list hr {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.participant-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.participant-list ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}

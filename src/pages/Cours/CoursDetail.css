@@ -1,0 +1,32 @@
+/* src/pages/Cours/CoursDetail.css */
+.card {
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card h4 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 5px;
+}
+
+.card .icon {
+    font-size: 24px;
+}
+
+.card .feather-chevron-right {
+    font-size: 18px;
+}
+
+.card .bg-black {
+    background-color: #000;
+}
+
+.card .text-white {
+    color: #fff;
+}

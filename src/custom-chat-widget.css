@@ -1,0 +1,39 @@
+/* custom-chat-widget.css */
+
+.rcw-conversation-container .rcw-header {
+    background-color: red; /* Change header background color to red */
+  }
+  
+  .rcw-conversation-container .rcw-title {
+    color: white; /* Change title text color */
+  }
+  
+  .rcw-conversation-container .rcw-subtitle {
+    color: white; /* Change subtitle text color */
+  }
+  
+  .rcw-message {
+    background-color: red; /* Change user message bubble color */
+    color: white; /* Change user message text color */
+  }
+  
+  .rcw-message .rcw-client {
+    background-color: red; /* Ensure user message bubble color is red */
+    color: white; /* Ensure user message text color is white */
+  }
+  
+  .rcw-message .rcw-response {
+    background-color: lightgrey; /* Change bot response bubble color */
+    color: black; /* Change bot response text color */
+  }
+  
+  .rcw-input-container .rcw-send {
+    background-color: red; /* Change send button color */
+    color: white; /* Change send button text color */
+  }
+  
+  .rcw-response {
+    background-color: lightgrey; /* Ensure bot response bubble color */
+    color: black; /* Ensure bot response text color */
+  }
+  

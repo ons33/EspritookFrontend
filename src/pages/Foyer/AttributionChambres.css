@@ -1,0 +1,93 @@
+.attribution-chambres-container {
+    padding-top: 70px;
+    margin-top: 20px;
+  }
+  
+  .card-header.bg-primary {
+    background-color: #637c86;
+  }
+  
+  .btn-primaryyy {
+    background-color: #ee4346;
+    border-color: #ee4346;
+    color: white;
+  }
+  
+  .btn-secondary {
+    background-color: #3e5e6a;
+    border-color: #3e5e6a;
+    color: white;
+  }
+  
+  .btnnn {
+    background-color: #bd081c;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+  }
+  .btnatt{
+    background-color: #bd081c;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+  }
+  .table tbody td {
+    background-color: #f9f9f9;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+  }
+  .no-demand-message {
+    background-color: #f9f9f9;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: #6c757d;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .no-demand-message {
+    text-align: center;
+    color: #bd081c;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  
+  @keyframes blinking {
+    0% { background-color: #ffeb3b; }
+    50% { background-color: #ffec8e; }
+    100% { background-color: #ffeb3b; }
+  }
+  
+  .btn-success-done {
+    display: inline-flex;
+    align-items: center;
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+  }
+  
+ 
+  .blinking-row {
+    animation: blinker 1.5s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+
+  
+  .btn-success-done svg {
+    margin-left: 5px;
+  }
