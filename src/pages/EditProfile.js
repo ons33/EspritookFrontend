@@ -27,7 +27,7 @@ const EditProfile = () => {
         setId(userId); // Met à jour l'état id
 
         // Utilise userId directement ici au lieu de id
-        axios.get(`http://localhost:8081/api/user/getUserFromKeycloak/${userId}`)
+        axios.get(`http://localhost:3000/api/user/getUserFromKeycloak/${userId}`)
             .then(response => {
                 setUserData(response.data.user);
                 setSelectedInterests(response.data.user.attributes.interests || []);
@@ -42,7 +42,7 @@ useEffect( ()=>{
     useEffect(() => {
         const userId = localStorage.getItem('userId');
 
-        axios.get(`http://localhost:8081/api/user/getUserFromKeycloak/${userId}`)
+        axios.get(`http://localhost:3000/api/user/getUserFromKeycloak/${userId}`)
             .then(response => {
                 setUserData(response.data.user);
                 setSelectedInterests(response.data.user.attributes.interests || []);
@@ -79,7 +79,7 @@ useEffect( ()=>{
         const formData = new FormData();
         formData.append('image', newImage);
 
-        axios.put(`http://localhost:8081/api/user/updateImage/${userId}`, formData)
+        axios.put(`http://localhost:3000/api/user/updateImage/${userId}`, formData)
             .then(response => {
                 console.log('Image updated successfully:', response.data);
                 setSuccessMessage('Image updated successfully.');
@@ -118,7 +118,7 @@ useEffect( ()=>{
 
         const userId = localStorage.getItem('userId');
 
-        axios.put(`http://localhost:8081/api/user/editProfile/${userId}`, updatedUserData)
+        axios.put(`http://localhost:3000/api/user/editProfile/${userId}`, updatedUserData)
             .then(response => {
                 console.log('Profile updated successfully:', response.data);
                 setSuccessMessage('Profile updated successfully.');

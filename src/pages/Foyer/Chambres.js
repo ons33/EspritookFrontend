@@ -86,7 +86,9 @@ const AttributionChambres = () => {
           'Authorization': `Bearer ${token}`
         }
       });
+
       setSelectedUser(response.data);
+      console.log("ee",selectedUser);
       setShowModal(true);
     } catch (error) {
       console.error("Erreur lors de la récupération des détails de l'utilisateur :", error);
@@ -119,6 +121,7 @@ const AttributionChambres = () => {
     const fetchFoyers = async () => {
       try {
         const response = await axios.get('http://localhost:8081/api/foyers');
+        console.log("foyer",response.data);
         setFoyers(response.data);
       } catch (error) {
         console.error("Erreur lors de la récupération des foyers :", error);
@@ -373,11 +376,13 @@ const AttributionChambres = () => {
                 <Button variant="secondary" onClick={handleCloseModal}>Fermer</Button>
               </Modal.Footer>
             </Modal>
-        {foyers.map((foyer) => (
-          <Card key={foyer._id} style={{ margin: '20px 0' }} responsive>
-            <Card.Title style={{ fontFamily: "inherit", fontWeight: "bolder", marginBottom: '20px', fontSize: "24px" }} >Foyer {foyer.typeFoyer}</Card.Title>
+            {foyers.map((foyer) => (
+    <Card key={foyer._id} style={{ margin: '20px 0' }} responsive>
+        <Card.Title style={{ fontFamily: "inherit", fontWeight: "bolder", marginBottom: '20px', fontSize: "24px" }}>
+            Foyer {foyer.typeFoyer}
+        </Card.Title>
 
-            <Card.Body>
+        <Card.Body>
               {Array.from(new Set(chambresDisponibles
                 .filter((chambre) => chambre.foyer === foyer._id)
                 .map((chambre) => chambre.etage)))
@@ -439,11 +444,8 @@ const AttributionChambres = () => {
                                 {selectedUser && selectedUser.length > 0 ? (
                                   selectedUser.map((user, index) => (
                                     <div key={index} style={{ marginBottom: '20px' }}>
-                                      <p><strong>Prénom:</strong> {user.firstName}</p>
-                                      <p><strong>Nom:</strong> {user.lastName}</p>
-                                      <p><strong>Email:</strong> {user.email}</p>
-                                      <p><strong>Téléphone:</strong> {user.attributes && user.attributes.mobile ? user.attributes.mobile[0] : 'Non disponible'}</p>
-                                      <p><strong>Intérêts:</strong> {user.attributes && user.attributes.interests ? user.attributes.interests.join(', ') : 'Non disponible'}</p>
+                                      <p><strong>email:</strong> {user}</p>
+                                     
                                       {selectedUser.length > 1 && index !== selectedUser.length - 1 && <hr />} {/* Add a separator between users if more than one */}
                                     </div>
                                   ))
@@ -465,8 +467,9 @@ const AttributionChambres = () => {
                   </div>
                 ))}
             </Card.Body>
-          </Card>
-        ))}
+    </Card>
+))}
+
         <Button className="blinking-button" style={{ backgroundColor: "#405f6b", }} onClick={sendReminders}>Faire Rappel</Button>
         <div>
           <h4>Message:</h4>

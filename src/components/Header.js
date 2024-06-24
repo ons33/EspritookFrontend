@@ -176,14 +176,16 @@ const Header = () => {
                                     
                                     <li><Link to="/defaultgroup" className="nav-content-bttn open-font"><i className="feather-zap btn-round-md  me-3 text-white" style={{background:"#ff9181"}}></i><span>{t('Afficher plus')}</span></Link></li>
                                  
-                                    {checkRole('Admin') && (
+                                    {checkRole('admin') && (
                                         <Fragment>
-                                            <li><Link to="/defaultjob" className="nav-content-bttn open-font"><i className="feather-award btn-round-md  me-3" style={{background:"#90b0b3"}}></i><span>{t('Jobs')}</span></Link></li>
-                                            <li><Link to="/myjobs" className="nav-content-bttn open-font"><i className="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>{t('My jobs')}</span></Link></li>
+                                          <li><Link to="/dash" className="nav-content-bttn open-font"><i className="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>{t('Utilisateurs')}</span></Link></li>
+
+                                            <li><Link to="/defaultjob" className="nav-content-bttn open-font"><i className="feather-user btn-round-md bg-primary-gradiant me-3" style={{background:"#90b0b3"}}></i><span>{t('Offres demploi')}</span></Link></li>
+                                            <li><Link to="/myjobs" className="nav-content-bttn open-font"><i className="feather-user btn-round-md bg-primary-gradiant me-3"></i><span>{t('Mes Offres')}</span></Link></li>
                                             <li>
                                                 <div className="dropdown">
-                                                    <button className="btn btn-link dropdown-toggle" onClick={toggleOpenFoyer}>
-                                                        <i className="feather-user btn-round-md bg-red me-3"></i>
+                                                    <button className="btn btn-link dropdown-toggle" style={{fontSize: "15px", color: "#8d8d8d",fontWeight:"600"}} onClick={toggleOpenFoyer}>
+                                                        <i className="feather-user btn-round-md bg-primary-gradiant me-3" style={{color:"white", }}></i>
                                                         Foyer
                                                     </button>
                                                     {isOpenFoyer && (
@@ -197,13 +199,13 @@ const Header = () => {
                                             </li>
                                             <li>
                                                 <div className="dropdown">
-                                                    <button className="btn btn-link dropdown-toggle" onClick={toggleOpenEvenements}>
-                                                        <i className="feather-user btn-round-md bg-red me-3"></i>
+                                                    <button className="btn btn-link dropdown-toggle" style={{fontSize: "15px", color: "#8d8d8d",fontWeight:"600"}} onClick={toggleOpenEvenements}>
+                                                        <i className="feather-user btn-round-md bg-primary-gradiant me-3" style={{color:"white", }}></i>
                                                         Evenements
                                                     </button>
                                                     {isOpenEvenements && (
                                                         <ul className="dropdown-menu show">
-                                                            <li><NavLink to="/defaultevent" className="dropdown-item">{t('evenements')}</NavLink></li>
+                                                            <li><NavLink to="/defaultevent" className="dropdown-item">{t('Evenements')}</NavLink></li>
                                                             <li><NavLink to="/mesEvenement" className="dropdown-item">{t('Mes evenements')}</NavLink></li>
                                                         </ul>
                                                     )}
@@ -211,8 +213,8 @@ const Header = () => {
                                             </li>
                                             <li>
                                                 <div className="dropdown">
-                                                    <button className="btn btn-link dropdown-toggle" onClick={toggleOpenCours}>
-                                                        <i className="feather-user btn-round-md bg-red me-3"></i>
+                                                    <button className="btn btn-link dropdown-toggle" style={{fontSize: "15px", color: "#8d8d8d",fontWeight:"600"}} onClick={toggleOpenCours}>
+                                                        <i className="feather-user btn-round-md bg-primary-gradiant me-3" style={{color:"white", }}></i>
                                                         Cours
                                                     </button>
                                                     {isOpenCours && (

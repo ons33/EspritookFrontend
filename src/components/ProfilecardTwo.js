@@ -6,7 +6,7 @@ const ProfilecardTwo = ({ user }) => {
         <div className="card w-100 shadow-xss rounded-xxl border-0 mb-3 mt-3 overflow-hidden">
             <img className=" h240 bg-image-cover bg-image-center" src="assets/images/couvertureee.jpg" alt="Favicon" style={{ width: "60rem" }} />
             <div className="card-body d-block pt-4 text-center position-relative">
-                <figure className="avatar mt--6 position-relative w75 z-index-1 w100 z-index-1 ms-auto me-auto"><img src="assets/images/man.png" alt="avater" className="p-1 bg-white rounded-xl w-100" /></figure>
+            <figure className="avatar mt--6 position-relative w75 z-index-1 w100 z-index-1 ms-auto me-auto"><img src={user.image}  alt="avaterrr" className="p-1 bg-white rounded-xl w-100" /></figure>
                 <h4 className="font-xs ls-1 fw-700 text-grey-900">{user.given_name} {user.family_name}  <span className="d-block font-xssss fw-500 mt-1 lh-3 text-grey-500">{user.email}</span></h4>
                 <div className="d-flex align-items-center pt-0 position-absolute left-15 top-10 mt-4 ms-2">
                     

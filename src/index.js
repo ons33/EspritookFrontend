@@ -125,7 +125,8 @@ class Root extends Component{
                     <Route exact path={`${process.env.PUBLIC_URL}/defaultsettings`} component={Settings}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/defaultvideo`} component={Videos}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/defaultanalytics`} component={Analytics}/>
-                    
+                    <Route exact path={`${process.env.PUBLIC_URL}/editProfile`} component={EditProfile}/>
+
                     <Route exact path={`${process.env.PUBLIC_URL}/profile`} component={Profile}/>
                   <Route exact path={`${process.env.PUBLIC_URL}/editProfile`} component={EditProfile}/>
                     <Route exact path={`${process.env.PUBLIC_URL}/accountinformation`} component={Account}/>

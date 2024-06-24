@@ -100,7 +100,9 @@ const Rightchat = () => {
             {filteredUsers.map((user, index) => (
               <li key={index} className="bg-transparent list-group-item no-icon pe-0 ps-0 pt-2 pb-2 border-0 d-flex align-items-center">
                 <figure className="avatar float-left mb-0 me-2">
-                  <img src={`assets/images/user.png`} alt="avatar" className="w35" />
+            
+
+                  <img  src={user.attributes.image} alt="avatar" className="w35" />
                 </figure>
                 <h3 className="fw-700 mb-0 mt-0">
                   <span className="font-xssss text-grey-600 d-block text-dark model-popup-chat pointer" onClick={() => selectUser(user)}>

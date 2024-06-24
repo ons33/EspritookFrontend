@@ -97,6 +97,7 @@ const ChatRoom = () => {
       getChatRoomId();
     }
   }, [selectedUser, currentUser]);
+
   useEffect(() => {
     if (chatRoomId) {
       const messagesRef = collection(firestore, 'chatRooms', chatRoomId, 'messages');
@@ -116,6 +117,7 @@ const ChatRoom = () => {
       return unsubscribe;
     }
   }, [chatRoomId]);
+
   const handleSendMessage = async () => {
     if (newMessage.trim() !== '' && chatRoomId) {
       await addDoc(collection(firestore, 'chatRooms', chatRoomId, 'messages'), {
@@ -126,6 +128,7 @@ const ChatRoom = () => {
       setNewMessage('');
     }
   };
+
   const formatTimestamp = (timestamp) => {
     if (!timestamp) {
       return 'Invalid timestamp';
@@ -161,34 +164,36 @@ const ChatRoom = () => {
               <div className="col-lg-12 position-relative">
                 <div className="chat-wrapper pt-0 w-100 position-relative scroll-bar bg-white theme-dark-bg">
                   <div className="chat-body p-3">
-                    <h5 className="selected-user-name" style={{marginBottom: "4%"}}>
+                    <h5 className="selected-user-name" style={{ marginBottom: "4%" }}>
                       {selectedUserName}
                       {isConnected && <span className="bg-success ms-auto btn-round-xss"></span>}
                     </h5>
-*                      <div className="messages-content pb-5">
-                        {messages.map((msg) => (
-                          <div key={msg.id} className={`message-item ${msg.senderId === currentUser ? 'outgoing-message' : ''}`}>
-                            <div className="message-user">
-                              <figure className="avatar">
-                                <img src="assets/images/user.png" alt="avatar" />
-                              </figure>
-                              <div>
-                                <h5>{msg.senderId === currentUser ? 'You' : selectedUser.username}</h5>
-                                <div className="time">{formatTimestamp(msg.timestamp)}</div>
-                              </div>
+                    <div className="messages-content pb-5">
+                      {messages.map((msg) => (
+                        <div key={msg.id} className={`message-item ${msg.senderId === currentUser ? 'outgoing-message' : ''}`}>
+                          <div className="message-user">
+                          <figure className="avatar">
+           
+        <img src="https://as1.ftcdn.net/v2/jpg/03/39/45/96/1000_F_339459697_XAFacNQmwnvJRqe1Fe9VOptPWMUxlZP8.jpg" alt="avatar" />
+      </figure>
+ 
+
+                            <div>
+                              <h5>{msg.senderId === currentUser ? 'You' : selectedUser.username}</h5>
+                              <div className="time">{formatTimestamp(msg.timestamp)}</div>
                             </div>
-                            <div className="message-wrap">{msg.message}</div>
                           </div>
-                        ))}
-                      </div>
-                   
+                          <div className="message-wrap">{msg.message}</div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
                 <div className="chat-bottom dark-bg p-3 shadow-none theme-dark-bg" style={{ width: "98%" }}>
                   <form className="chat-form" onSubmit={(e) => { e.preventDefault(); handleSendMessage(); }}>
                     <button type="button" className="bg-grey float-left"><i className="ti-microphone text-grey-600"></i></button>
                     <div className="form-group">
-                      <input type="text" onChange={(e) => setNewMessage(e.target.value)} placeholder="Type a message" />
+                      <input type="text" value={newMessage} onChange={(e) => setNewMessage(e.target.value)} placeholder="Type a message" />
                     </div>
                     <button type="submit" className="bg-current"><i className="ti-arrow-right text-white"></i></button>
                   </form>
